@@ -1,0 +1,13 @@
+@import '~src/styles/shared';
+
+header {
+	background-color: $primary-color;
+}
+
+.logo {
+	max-height: 2em;
+}
+
+.github-link {
+	color: $secondary-color;
+}

@@ -1,0 +1,18 @@
+@import '~src/styles/shared';
+
+$menu-button-size: 60px;
+
+.menu-container {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	z-index: 50;
+}
+
+.menu-button {
+	width: $menu-button-size;
+	height: $menu-button-size;
+
+	background-color: $primary-color;
+	color: white;
+}
