@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RootComponent } from './components/root/root.component';
 import { RootRouting } from './root.routing';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	bootstrap: [
@@ -16,6 +17,7 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
+		HttpClientModule,
 		LayoutModule,
 		RootRouting
 	],
