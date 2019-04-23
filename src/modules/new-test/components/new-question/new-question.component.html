@@ -1,0 +1,15 @@
+<mat-form-field>
+	<mat-label>
+		Question text
+	</mat-label>
+	<input matInput type="text" [formControl]="form.content">
+	<mat-error>
+		Provide a question text
+	</mat-error>
+</mat-form-field>
+
+<span>Answers</span>
+
+<q-new-answer *ngFor="let answer of form.answers.controls;let i=index" [form]="answer" [index]="i"
+	(onRemoveClick)="removeAnswer($event)">
+</q-new-answer>

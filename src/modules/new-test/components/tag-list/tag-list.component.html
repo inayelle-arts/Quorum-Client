@@ -1,0 +1,10 @@
+<mat-form-field>
+	<mat-chip-list #tagList>
+		<mat-chip *ngFor="let tag of tags.controls" (removed)="removeTag(tag)">
+			{{tag.value}}
+			<mat-icon matChipRemove>cancel</mat-icon>
+		</mat-chip>
+		<input placeholder="New tag..." [matChipInputFor]="tagList" [matChipInputSeparatorKeyCodes]="[9, 13, 32]"
+			(matChipInputTokenEnd)="addTag($event)">
+	</mat-chip-list>
+</mat-form-field>

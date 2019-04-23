@@ -1,9 +1,14 @@
 @import '_util';
 @import '_theme';
 @import '_container';
+@import '_forms';
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+body {
+	background: url('~/assets/background.png') repeat;
 }

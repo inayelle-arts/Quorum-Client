@@ -4,6 +4,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from '../material/material.module';
 import { SignModule } from 'src/modules/sign/sign.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -13,7 +14,8 @@ import { SignModule } from 'src/modules/sign/sign.module';
 	imports: [
 		CommonModule,
 		MaterialModule,
-		SignModule
+		SignModule,
+		RouterModule
 	],
 	exports: [
 		HeaderComponent,
