@@ -1,0 +1,19 @@
+<mat-form-field class="answer-field">
+	<mat-label>
+		Answer {{index + 1}}
+	</mat-label>
+
+	<div class="answer-actions">
+		<input matInput type="text" [formControl]="form.content">
+		<mat-checkbox matTooltip="Mark as correct" [formControl]="form.isCorrect" color="primary">
+		</mat-checkbox>
+		<button type="button" matTooltip="Remove answer" mat-icon-button color="warn" (click)="remove()">
+			<mat-icon>remove</mat-icon>
+		</button>
+	</div>
+
+	<mat-error>
+		Answer cannot be empty
+	</mat-error>
+
+</mat-form-field>

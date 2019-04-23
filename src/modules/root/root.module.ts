@@ -6,6 +6,9 @@ import { RootComponent } from './components/root/root.component';
 import { RootRouting } from './root.routing';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NewTestModule } from '../new-test/new-test.module';
 
 @NgModule({
 	bootstrap: [
@@ -13,13 +16,16 @@ import { HttpClientModule } from '@angular/common/http';
 	],
 	declarations: [
 		RootComponent,
+		HomeComponent,
+		NotFoundComponent,
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		RootRouting,
 		LayoutModule,
-		RootRouting
+		NewTestModule,
 	],
 	providers: [
 		{

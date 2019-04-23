@@ -1,21 +1,15 @@
 import { FormBase } from 'src/base/form.base';
 import { FormControl, Validators } from '@angular/forms';
-import { SignUpViewModel } from '../../view-models/sign-up.view-model';
+import { SignInViewModel } from '../view-models/sign-in.view-model';
 
-export class SignUpForm extends FormBase<SignUpViewModel>
+export class SignInForm extends FormBase<SignInViewModel>
 {
 	public constructor()
 	{
 		super({
-			userType: new FormControl('', Validators.required),
 			email: new FormControl('', [Validators.required, Validators.email]),
-			password: new FormControl('', [Validators.required, Validators.minLength(8)])
+			password: new FormControl('', Validators.required)
 		});
-	}
-
-	public get userType(): FormControl
-	{
-		return this.getControl('userType');
 	}
 
 	public get email(): FormControl
