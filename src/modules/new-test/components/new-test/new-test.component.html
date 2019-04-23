@@ -1,13 +1,11 @@
 <div class="container-center w-50">
 	<h1 class="w-100">Test creation</h1>
 
-	{{form.value | json}}
-
 	<form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
 
 		<mat-vertical-stepper #stepper>
 
-			<mat-step label="General information">
+			<mat-step label="General information" [completed]='form.name.valid'>
 
 				<mat-form-field>
 					<mat-label>

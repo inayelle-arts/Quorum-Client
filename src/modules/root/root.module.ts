@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NewTestModule } from '../new-test/new-test.module';
+import { PassTestModule } from '../pass-test/pass-test.module';
 
 @NgModule({
 	bootstrap: [
@@ -26,6 +27,7 @@ import { NewTestModule } from '../new-test/new-test.module';
 		RootRouting,
 		LayoutModule,
 		NewTestModule,
+		PassTestModule
 	],
 	providers: [
 		{

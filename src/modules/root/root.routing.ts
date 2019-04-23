@@ -8,11 +8,16 @@ import
 	RouterModule,
 	Routes
 } from '@angular/router';
+import { PassTestModule } from 'src/modules/pass-test/pass-test.module';
 
 const routes: Routes = [
 	{
 		path: 'new',
 		loadChildren: () => NewTestModule
+	},
+	{
+		path: 'pass',
+		loadChildren: () => PassTestModule
 	},
 	{
 		path: '',
