@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { NewTestForm } from '../../forms/new-test.form';
-import { MatChipInputEvent } from '@angular/material';
-import { FormControl } from '@angular/forms';
 import { NewQuestionForm } from '../../forms/new-question.form';
+import { ComponentBase } from '../../../../base/component.base';
 
 @Component({
 	selector: 'q-new-test',
 	templateUrl: './new-test.component.html',
 	styleUrls: ['../../styles/new-test.styles.scss']
 })
-export class NewTestComponent
+export class NewTestComponent extends ComponentBase
 {
 	private _isSent: boolean;
 
@@ -17,6 +16,8 @@ export class NewTestComponent
 
 	public constructor()
 	{
+		super();
+
 		this._isSent = false;
 		this.form = new NewTestForm();
 		this.form.addQuestion();
@@ -25,6 +26,11 @@ export class NewTestComponent
 	public get isSent(): boolean
 	{
 		return this._isSent;
+	}
+
+	public get hasUnsavedData(): boolean
+	{
+		return this.form.dirty && !this._isSent;
 	}
 
 	public addTag(tag: any): void
