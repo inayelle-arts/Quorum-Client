@@ -1,29 +1,31 @@
 <div class="container-center">
-	{{this.form.value | json}}
 
-	<h1 class="w-100">{{form.model.name}}</h1>
+	<div *ngIf="!loaded">
+		<mat-spinner diameter="40">
+		</mat-spinner>
+	</div>
 
-	<form *ngIf="loaded" [formGroup]="form" (ngSubmit)="onSubmit()">
+	<div *ngIf="loaded" class="w-100">
 
-		<mat-vertical-stepper>
-			<mat-step *ngFor="let question of form.questions.controls;let i = index"
-				[label]="form.questionAt(i).model.content">
-				<q-challenge-question [question]="question"></q-challenge-question>
-			</mat-step>
+		<h1 class="w-100">{{form.model.name}}</h1>
 
-			<mat-step label="Completion">
-				<div class="container-center">
-					<button mat-raised-button [disabled]="isSent">
-						Complete the test
-					</button>
-				</div>
-			</mat-step>
-		</mat-vertical-stepper>
-	</form>
+		<form *ngIf="loaded" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-</div>
+			<mat-vertical-stepper>
+				<mat-step *ngFor="let question of form.questions.controls;let i = index"
+					[label]="form.questionAt(i).model.content">
+					<q-challenge-question [question]="question"></q-challenge-question>
+				</mat-step>
 
-<div *ngIf="!loaded">
-	<mat-spinner diameter="40">
-	</mat-spinner>
+				<mat-step label="Completion">
+					<div class="container-center">
+						<button mat-raised-button [disabled]="isSent">
+							Complete the test
+						</button>
+					</div>
+				</mat-step>
+			</mat-vertical-stepper>
+		</form>
+
+	</div>
 </div>

@@ -12,7 +12,7 @@ export class ChallengeQuestionForm extends FormBase<ChallengedQuestionViewModel>
 	public constructor(questionModel: ChallengeQuestionResultModel, parent: ChallengeTestForm)
 	{
 		super({
-			id: new FormControl(questionModel.id),
+			sourceQuestionId: new FormControl(questionModel.id),
 			answers: new FormArray([])
 		});
 

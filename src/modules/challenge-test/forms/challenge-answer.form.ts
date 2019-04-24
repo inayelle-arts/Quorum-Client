@@ -11,7 +11,7 @@ export class ChallengeAnswerForm extends FormBase<ChallengedAnswerViewModel>
 	public constructor(answerModel: ChallengeAnswerResultModel, parent: ChallengeQuestionForm)
 	{
 		super({
-			id: new FormControl(answerModel.id),
+			sourceAnswerId: new FormControl(answerModel.id),
 			isCorrect: new FormControl(false)
 		});
 

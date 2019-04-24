@@ -3,6 +3,8 @@ import { CheckQuestionResultModel } from '@modules/check-test/result-models/chec
 export interface CheckTestResultModel
 {
 	name: string;
-	date: string;
+	// date: string;
+	maximumScore: number;
+	userScore: number;
 	questions: CheckQuestionResultModel[];
 }
