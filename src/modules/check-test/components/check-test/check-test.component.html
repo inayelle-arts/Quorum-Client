@@ -8,7 +8,7 @@
 
 	<div *ngIf="loaded" class="w-75">
 		<h1 class="w-100">
-			{{testModel.name}}
+			{{testModel.name}} | [{{testModel.userScore}}/{{testModel.maximumScore}}]
 		</h1>
 
 		<mat-vertical-stepper>
