@@ -1,3 +1,27 @@
-<p>
-  check-test works!
-</p>
+<div class="container-center">
+
+	<div *ngIf="!loaded">
+		<mat-spinner diameter="40">
+		</mat-spinner>
+	</div>
+
+
+	<div *ngIf="loaded" class="w-75">
+		<h1 class="w-100">
+			{{testModel.name}}
+		</h1>
+
+		<mat-vertical-stepper>
+			<mat-step *ngFor="let question of testModel.questions" [label]="question.content">
+				<mat-list>
+					<mat-card matListItem *ngFor="let answer of question.answers"
+						[class.user-answer-correct]="answer.isCorrect && answer.isUserCorrect"
+						[class.user-answer-incorrect]="answer.isCorrect && !answer.isUserCorrect"
+						[class.user-answer-incorrect]="!answer.isCorrect && answer.isUserCorrect">
+						{{answer.content}}
+					</mat-card>
+				</mat-list>
+			</mat-step>
+		</mat-vertical-stepper>
+	</div>
+</div>
