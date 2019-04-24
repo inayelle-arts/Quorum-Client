@@ -1,0 +1,10 @@
+<ng-template matStepLabel>
+	{{form.model.content}}
+</ng-template>
+<div *ngFor="let answer of form.answers.controls">
+	<div class="answer-container">
+		<q-challenge-answer [answer]="answer">
+		</q-challenge-answer>
+	</div>
+	<mat-divider></mat-divider>
+</div>

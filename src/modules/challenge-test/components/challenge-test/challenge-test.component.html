@@ -1,0 +1,29 @@
+<div class="container-center">
+	{{this.form.value | json}}
+
+	<h1 class="w-100">{{form.model.name}}</h1>
+
+	<form *ngIf="loaded" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+		<mat-vertical-stepper>
+			<mat-step *ngFor="let question of form.questions.controls;let i = index"
+				[label]="form.questionAt(i).model.content">
+				<q-challenge-question [question]="question"></q-challenge-question>
+			</mat-step>
+
+			<mat-step label="Completion">
+				<div class="container-center">
+					<button mat-raised-button [disabled]="isSent">
+						Complete the test
+					</button>
+				</div>
+			</mat-step>
+		</mat-vertical-stepper>
+	</form>
+
+</div>
+
+<div *ngIf="!loaded">
+	<mat-spinner diameter="40">
+	</mat-spinner>
+</div>
