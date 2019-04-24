@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NewTestForm } from '../../forms/new-test.form';
 import { NewQuestionForm } from '../../forms/new-question.form';
 import { ComponentBase } from '../../../../base/component.base';
+import { NewTestService } from '@modules/new-test/services/new-test.service';
+import { NewTestViewModel } from '@modules/new-test/view-models/new-test.view-model';
+import { NotificationService } from '@services/notification.service';
 
 @Component({
 	selector: 'q-new-test',
@@ -10,13 +13,19 @@ import { ComponentBase } from '../../../../base/component.base';
 })
 export class NewTestComponent extends ComponentBase
 {
+	private readonly _newTestService: NewTestService;
+	private readonly _notifyService: NotificationService;
+
 	private _isSent: boolean;
 
 	public readonly form: NewTestForm;
 
-	public constructor()
+	public constructor(newTestService: NewTestService, notifyService: NotificationService)
 	{
 		super();
+
+		this._newTestService = newTestService;
+		this._notifyService = notifyService;
 
 		this._isSent = false;
 		this.form = new NewTestForm();
@@ -57,6 +66,13 @@ export class NewTestComponent extends ComponentBase
 
 		this._isSent = true;
 
-		console.log(this.form.value);
+		const viewModel = this.form.value as NewTestViewModel;
+
+		this._notifyService.notify('Creating your test...');
+
+		this._newTestService.createTest(viewModel).subscribe(r =>
+		{
+			this._notifyService.notify('Done!');
+		});
 	}
 }
