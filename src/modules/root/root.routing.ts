@@ -1,14 +1,14 @@
+import { ChallengeTestModule } from 'src/modules/challenge-test/challenge-test.module';
 import { HomeComponent } from './components/home/home.component';
+import { NewTestModule } from 'src/modules/new-test/new-test.module';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PathMatch } from 'src/enums/path-match.enum';
-import { NewTestModule } from '../new-test/new-test.module';
 import
 {
 	RouterModule,
 	Routes
 } from '@angular/router';
-import { PassTestModule } from 'src/modules/pass-test/pass-test.module';
 
 const routes: Routes = [
 	{
@@ -17,7 +17,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'pass',
-		loadChildren: () => PassTestModule
+		loadChildren: () => ChallengeTestModule
 	},
 	{
 		path: '',

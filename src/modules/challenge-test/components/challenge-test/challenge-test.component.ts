@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ChallengeTestForm } from '../../forms/challenge-test.form';
 import { ActivatedRoute } from '@angular/router';
 import { TestService } from 'src/services/test.service';
-import { ChallengeTestResultModel } from '../../result-models/challenge-test.result-model';
+import { ComponentBase } from '../../../../base/component.base';
 
 @Component({
-	selector: 'q-pass-test',
-	templateUrl: './pass-test.component.html',
-	styleUrls: ['./pass-test.component.scss']
+	selector: 'q-challenge-test',
+	templateUrl: './challenge-test.component.html',
+	styleUrls: ['./challenge-test.component.scss']
 })
-export class PassTestComponent implements OnInit
+export class ChallengeTestComponent extends ComponentBase implements OnInit
 {
 	private readonly _route: ActivatedRoute;
 	private readonly _testService: TestService;
@@ -20,10 +20,16 @@ export class PassTestComponent implements OnInit
 
 	public constructor(route: ActivatedRoute, testService: TestService)
 	{
+		super();
 		this._route = route;
 		this._testService = testService;
 		this._loaded = false;
 		this._isSent = false;
+	}
+
+	public get hasUnsavedData(): boolean
+	{
+		return true;
 	}
 
 	public get form(): ChallengeTestForm
@@ -43,7 +49,16 @@ export class PassTestComponent implements OnInit
 
 	public onSubmit(): void
 	{
+		if (this.form.invalid)
+		{
+			return;
+		}
 
+		this._isSent = true;
+
+		const viewModel = this._form.viewModel;
+
+		console.log(viewModel);
 	}
 
 	public ngOnInit(): void

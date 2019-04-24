@@ -6,11 +6,11 @@ import
 } from '@angular/core';
 
 @Component({
-	selector: 'q-pass-question',
-	templateUrl: './pass-question.component.html',
-	styleUrls: ['./pass-question.component.scss']
+	selector: 'q-challenge-question',
+	templateUrl: './challenge-question.component.html',
+	styleUrls: ['./challenge-question.component.scss']
 })
-export class PassQuestionComponent
+export class ChallengeQuestionComponent
 {
 	@Input('question')
 	public readonly form: ChallengeQuestionForm;

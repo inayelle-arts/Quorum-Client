@@ -14,7 +14,6 @@ import { NewQuestionComponent } from './components/new-question/new-question.com
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
 
-
 @NgModule({
 	declarations: [
 		NewTestComponent,

@@ -1,8 +1,8 @@
 import { HttpServiceBase } from 'src/base/http-service.base';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ChallengeTestResultModel } from '../modules/pass-test/result-models/challenge-test.result-model';
-import { ChallengeQuestionResultModel } from '../modules/pass-test/result-models/challenge-question.result-model';
+import { ChallengeTestResultModel } from '../modules/challenge-test/result-models/challenge-test.result-model';
+import { ChallengeQuestionResultModel } from '../modules/challenge-test/result-models/challenge-question.result-model';
 
 @Injectable()
 export class TestService extends HttpServiceBase

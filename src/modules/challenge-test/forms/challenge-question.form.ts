@@ -2,12 +2,12 @@ import { ChallengedQuestionViewModel } from '../view-models/challenged-question.
 import { FormBase } from 'src/base/form.base';
 import { FormControl, FormArray } from '@angular/forms';
 import { ChallengeTestForm } from './challenge-test.form';
-import { ChallengeQuestionResultModel } from 'src/modules/pass-test/result-models/challenge-question.result-model';
+import { ChallengeQuestionResultModel } from 'src/modules/challenge-test/result-models/challenge-question.result-model';
 import { ChallengeAnswerForm } from './challenge-answer.form';
 
 export class ChallengeQuestionForm extends FormBase<ChallengedQuestionViewModel>
 {
-	public readonly questionModel: ChallengeQuestionResultModel;
+	public readonly model: ChallengeQuestionResultModel;
 
 	public constructor(questionModel: ChallengeQuestionResultModel, parent: ChallengeTestForm)
 	{
@@ -20,11 +20,13 @@ export class ChallengeQuestionForm extends FormBase<ChallengedQuestionViewModel>
 
 		questionModel.answers.forEach(a => this.answers.push(new ChallengeAnswerForm(a, this)));
 
-		this.questionModel = questionModel;
+		this.model = questionModel;
 	}
 
 	public get answers(): FormArray
 	{
 		return this.getArray('answers');
 	}
+
+	[index: number]: ChallengeAnswerForm;
 }

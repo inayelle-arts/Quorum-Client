@@ -10,7 +10,7 @@ import { FormBase } from 'src/base/form.base';
 
 export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 {
-	public readonly testModel: ChallengeTestResultModel;
+	public readonly model: ChallengeTestResultModel;
 
 	public constructor(testModel: ChallengeTestResultModel)
 	{
@@ -21,11 +21,16 @@ export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 
 		testModel.questions.forEach(q => this.questions.push(new ChallengeQuestionForm(q, this)));
 
-		this.testModel = testModel;
+		this.model = testModel;
 	}
 
 	public get questions(): FormArray
 	{
 		return this.getArray('questions');
+	}
+
+	public questionAt(index: number): ChallengeQuestionForm
+	{
+		return this.questions.get([index]) as ChallengeQuestionForm;
 	}
 }

@@ -6,7 +6,7 @@ import { ChallengeAnswerResultModel } from '../result-models/challenge-answer.re
 
 export class ChallengeAnswerForm extends FormBase<ChallengedAnswerViewModel>
 {
-	public readonly answerModel: ChallengeAnswerResultModel;
+	public readonly model: ChallengeAnswerResultModel;
 
 	public constructor(answerModel: ChallengeAnswerResultModel, parent: ChallengeQuestionForm)
 	{
@@ -17,7 +17,7 @@ export class ChallengeAnswerForm extends FormBase<ChallengedAnswerViewModel>
 
 		this.setParent(parent);
 
-		this.answerModel = answerModel;
+		this.model = answerModel;
 	}
 
 	public get isCorrect(): FormControl

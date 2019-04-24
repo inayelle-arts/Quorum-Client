@@ -8,8 +8,8 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NewTestModule } from '../new-test/new-test.module';
-import { PassTestModule } from '../pass-test/pass-test.module';
+import { NewTestModule } from 'src/modules/new-test/new-test.module';
+import { ChallengeTestModule } from 'src/modules/challenge-test/challenge-test.module';
 
 @NgModule({
 	bootstrap: [
@@ -27,7 +27,7 @@ import { PassTestModule } from '../pass-test/pass-test.module';
 		RootRouting,
 		LayoutModule,
 		NewTestModule,
-		PassTestModule
+		ChallengeTestModule
 	],
 	providers: [
 		{
