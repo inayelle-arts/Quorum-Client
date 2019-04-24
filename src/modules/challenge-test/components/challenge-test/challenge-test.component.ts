@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChallengeTestForm } from '../../forms/challenge-test.form';
 import { ActivatedRoute } from '@angular/router';
-import { TestService } from 'src/services/test.service';
+import { TestService } from '@services/test.service';
 import { ComponentBase } from '../../../../base/component.base';
 
 @Component({

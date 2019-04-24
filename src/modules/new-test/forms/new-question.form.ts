@@ -1,4 +1,4 @@
-import { FormBase } from 'src/base/form.base';
+import { FormBase } from '@base/form.base';
 import { NewQuestionViewModel } from '../view-models/new-question.view-model';
 import { FormControl, Validators, FormArray } from '@angular/forms';
 import { NewTestForm } from './new-test.form';

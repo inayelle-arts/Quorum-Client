@@ -1,4 +1,4 @@
-import { HttpServiceBase } from 'src/base/http-service.base';
+import { HttpServiceBase } from '@base/http-service.base';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ChallengeTestResultModel } from '../modules/challenge-test/result-models/challenge-test.result-model';

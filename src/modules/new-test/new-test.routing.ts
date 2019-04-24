@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewTestComponent } from './components/new-test/new-test.component';
 import { PathMatch } from '../../enums/path-match.enum';
-import { LeaveUnsavedDataGuard } from 'src/modules/leave-confirm-dialog/guard/leave-unsaved-data.guard';
+import { LeaveUnsavedDataGuard } from '@modules/leave-confirm-dialog/guard/leave-unsaved-data.guard';
 
 const routes: Routes =
 	[

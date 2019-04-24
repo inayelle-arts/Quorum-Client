@@ -9,9 +9,9 @@ import
 	ReactiveFormsModule
 } from '@angular/forms';
 import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
-import { MaterialModule } from 'src/modules/material/material.module';
+import { MaterialModule } from '@modules/material/material.module';
 import { NgModule } from '@angular/core';
-import { ServicesModule } from 'src/services/services.module';
+import { ServicesModule } from '@services/services.module';
 
 @NgModule({
 	declarations: [

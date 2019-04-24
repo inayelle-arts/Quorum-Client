@@ -1,7 +1,7 @@
-import { LeaveUnsavedDataGuard } from 'src/modules/leave-confirm-dialog/guard/leave-unsaved-data.guard';
+import { LeaveUnsavedDataGuard } from '@modules/leave-confirm-dialog/guard/leave-unsaved-data.guard';
 import { NgModule } from '@angular/core';
 import { ChallengeTestComponent } from './components/challenge-test/challenge-test.component';
-import { PathMatch } from 'src/enums/path-match.enum';
+import { PathMatch } from '@enums/path-match.enum';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes =

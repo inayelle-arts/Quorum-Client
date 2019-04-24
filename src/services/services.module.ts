@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TestService } from 'src/services/test.service';
+import { TestService } from '@services/test.service';
 
 @NgModule({
 	providers: [

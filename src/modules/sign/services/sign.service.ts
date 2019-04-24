@@ -1,4 +1,4 @@
-import { HttpServiceBase } from 'src/base/http-service.base';
+import { HttpServiceBase } from '@base/http-service.base';
 import { Injectable } from '@angular/core';
 import { SignInViewModel } from '../view-models/sign-in.view-model';
 import { Observable } from 'rxjs';

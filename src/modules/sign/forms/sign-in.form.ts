@@ -1,4 +1,4 @@
-import { FormBase } from 'src/base/form.base';
+import { FormBase } from '@base/form.base';
 import { FormControl, Validators } from '@angular/forms';
 import { SignInViewModel } from '../view-models/sign-in.view-model';
 
