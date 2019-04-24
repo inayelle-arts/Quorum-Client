@@ -13,6 +13,7 @@ import { StepLabelComponent } from './components/step-label/step-label.component
 import { NewQuestionComponent } from './components/new-question/new-question.component';
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
+import { NewTestService } from '@modules/new-test/services/new-test.service';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,9 @@ import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-
 		ReactiveFormsModule,
 		NewTestRouting,
 		LeaveConfirmDialogModule
+	],
+	providers: [
+		NewTestService
 	]
 })
 export class NewTestModule { }

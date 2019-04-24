@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ChallengeTestForm } from '../../forms/challenge-test.form';
 import { ActivatedRoute } from '@angular/router';
-import { TestService } from '@services/test.service';
+import { ChallengeService } from '@modules/challenge-test/services/challenge.service';
+import { ChallengeTestForm } from '../../forms/challenge-test.form';
+import
+{
+	Component,
+	OnInit
+} from '@angular/core';
 import { ComponentBase } from '../../../../base/component.base';
+import { NotificationService } from '@services/notification.service';
 
 @Component({
 	selector: 'q-challenge-test',
@@ -11,18 +16,21 @@ import { ComponentBase } from '../../../../base/component.base';
 })
 export class ChallengeTestComponent extends ComponentBase implements OnInit
 {
+	private readonly _testService: ChallengeService;
+	private readonly _notifyService: NotificationService;
 	private readonly _route: ActivatedRoute;
-	private readonly _testService: TestService;
+
 
 	private _form: ChallengeTestForm;
 	private _loaded: boolean;
 	private _isSent: boolean;
 
-	public constructor(route: ActivatedRoute, testService: TestService)
+	public constructor(route: ActivatedRoute, testService: ChallengeService, notifyService: NotificationService)
 	{
 		super();
 		this._route = route;
 		this._testService = testService;
+		this._notifyService = notifyService;
 		this._loaded = false;
 		this._isSent = false;
 	}
@@ -58,7 +66,12 @@ export class ChallengeTestComponent extends ComponentBase implements OnInit
 
 		const viewModel = this._form.viewModel;
 
-		console.log(viewModel);
+		this._notifyService.notify('Posting your results...');
+
+		this._testService.challenge(viewModel).subscribe(r =>
+		{
+			this._notifyService.notify('Done!');
+		});
 	}
 
 	public ngOnInit(): void

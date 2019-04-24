@@ -1,0 +1,21 @@
+import { HttpServiceBase } from '@base/http-service.base';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ChallengeTestResultModel } from '@modules/challenge-test/result-models/challenge-test.result-model';
+import { ChallengedTestViewModel } from '@modules/challenge-test/view-models/challenged-test.view-model';
+
+@Injectable()
+export class ChallengeService extends HttpServiceBase
+{
+	private readonly _url: string = "api/pass";
+
+	public getTestForChallenge(id: number): Observable<ChallengeTestResultModel>
+	{
+		return this.http.get<ChallengeTestResultModel>(this.combineUrl(this._url, id));
+	}
+
+	public challenge(viewModel: ChallengedTestViewModel): Observable<any>
+	{
+		return this.http.post(this._url, viewModel);
+	}
+}

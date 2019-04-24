@@ -15,7 +15,7 @@ export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 	public constructor(testModel: ChallengeTestResultModel)
 	{
 		super({
-			id: new FormControl(testModel.id),
+			sourceTestId: new FormControl(testModel.id),
 			questions: new FormArray([])
 		});
 
