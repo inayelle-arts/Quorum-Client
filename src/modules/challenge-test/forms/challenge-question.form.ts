@@ -27,6 +27,4 @@ export class ChallengeQuestionForm extends FormBase<ChallengedQuestionViewModel>
 	{
 		return this.getArray('answers');
 	}
-
-	[index: number]: ChallengeAnswerForm;
 }
