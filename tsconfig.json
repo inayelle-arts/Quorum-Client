@@ -17,6 +17,35 @@
 		"lib": [
 			"es2018",
 			"dom"
-		]
+		],
+		"paths": {
+			"@modules/*": [
+				"src/modules/*"
+			],
+			"@services/*": [
+				"src/services/*"
+			],
+			"@base/*": [
+				"src/base/*"
+			],
+			"@enums/*": [
+				"src/enums/*"
+			],
+			"@styles/*": [
+				"src/styles/*"
+			],
+			"@assets/*": [
+				"src/assets/*"
+			],
+			"@directives/*": [
+				"src/directives/*"
+			],
+			"@interfaces/*": [
+				"src/interfaces/*"
+			],
+			"@env/*": [
+				"src/environments/*"
+			]
+		}
 	}
 }
