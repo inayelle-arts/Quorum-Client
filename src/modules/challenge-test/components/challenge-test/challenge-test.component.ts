@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChallengeService } from '@modules/challenge-test/services/challenge.service';
 import { ChallengeTestForm } from '../../forms/challenge-test.form';
 import
@@ -19,25 +19,30 @@ export class ChallengeTestComponent extends ComponentBase implements OnInit
 	private readonly _testService: ChallengeService;
 	private readonly _notifyService: NotificationService;
 	private readonly _route: ActivatedRoute;
-
+	private readonly _router: Router;
 
 	private _form: ChallengeTestForm;
 	private _loaded: boolean;
 	private _isSent: boolean;
 
-	public constructor(route: ActivatedRoute, testService: ChallengeService, notifyService: NotificationService)
+	public constructor(
+		route: ActivatedRoute,
+		testService: ChallengeService,
+		notifyService: NotificationService,
+		router: Router)
 	{
 		super();
 		this._route = route;
 		this._testService = testService;
 		this._notifyService = notifyService;
+		this._router = router;
 		this._loaded = false;
 		this._isSent = false;
 	}
 
 	public get hasUnsavedData(): boolean
 	{
-		return true;
+		return !this._isSent;
 	}
 
 	public get form(): ChallengeTestForm
@@ -70,7 +75,11 @@ export class ChallengeTestComponent extends ComponentBase implements OnInit
 
 		this._testService.challenge(viewModel).subscribe(r =>
 		{
+			console.log(r);
+
 			this._notifyService.notify('Done!');
+
+			this._router.navigate(['/check', r.id]);
 		});
 	}
 
