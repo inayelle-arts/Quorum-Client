@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from 'src/modules/material/material.module';
+import { MaterialModule } from '@modules/material/material.module';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignInComponent } from './components/sign-in/sign-in.component';

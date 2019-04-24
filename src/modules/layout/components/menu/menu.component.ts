@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
-import { SignInComponent } from 'src/modules/sign/components/sign-in/sign-in.component';
-import { SignUpComponent } from 'src/modules/sign/components/sign-up/sign-up.component';
+import { SignInComponent } from '@modules/sign/components/sign-in/sign-in.component';
+import { SignUpComponent } from '@modules/sign/components/sign-up/sign-up.component';
 
 @Component({
 	selector: 'q-menu',

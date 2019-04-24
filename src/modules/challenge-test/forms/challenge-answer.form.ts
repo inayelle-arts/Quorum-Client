@@ -1,4 +1,4 @@
-import { FormBase } from 'src/base/form.base';
+import { FormBase } from '@base/form.base';
 import { ChallengedAnswerViewModel } from '../view-models/challenged-answer.view-model';
 import { FormControl } from '@angular/forms';
 import { ChallengeQuestionForm } from './challenge-question.form';

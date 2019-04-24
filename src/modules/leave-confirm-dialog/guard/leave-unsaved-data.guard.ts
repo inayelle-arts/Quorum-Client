@@ -1,7 +1,7 @@
 import { CanDeactivate } from '@angular/router';
-import { ComponentBase } from 'src/base/component.base';
+import { ComponentBase } from '@base/component.base';
 import { Injectable } from '@angular/core';
-import { LeaveConfirmDialogComponent } from 'src/modules/leave-confirm-dialog/components/leave-confirm-dialog/leave-confirm-dialog.component';
+import { LeaveConfirmDialogComponent } from '@modules/leave-confirm-dialog/components/leave-confirm-dialog/leave-confirm-dialog.component';
 import { LeaveConfirmDialogResult } from '../components/leave-confirm-dialog/leave-confirm-dialog.result';
 import { MatDialog } from '@angular/material';
 

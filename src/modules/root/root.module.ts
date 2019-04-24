@@ -1,15 +1,20 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { LayoutModule } from 'src/modules/layout/layout.module';
+import { ChallengeTestModule } from '@modules/challenge-test/challenge-test.module';
+import { CheckTestModule } from '@modules/check-test/check-test.module';
+import
+{
+	ErrorStateMatcher,
+	ShowOnDirtyErrorStateMatcher
+} from '@angular/material';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from '@modules/layout/layout.module';
+import { NewTestModule } from '@modules/new-test/new-test.module';
 import { NgModule } from '@angular/core';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RootComponent } from './components/root/root.component';
 import { RootRouting } from './root.routing';
-import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NewTestModule } from 'src/modules/new-test/new-test.module';
-import { ChallengeTestModule } from 'src/modules/challenge-test/challenge-test.module';
 
 @NgModule({
 	bootstrap: [
@@ -27,7 +32,8 @@ import { ChallengeTestModule } from 'src/modules/challenge-test/challenge-test.m
 		RootRouting,
 		LayoutModule,
 		NewTestModule,
-		ChallengeTestModule
+		ChallengeTestModule,
+		CheckTestModule
 	],
 	providers: [
 		{

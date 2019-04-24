@@ -1,9 +1,10 @@
-import { ChallengeTestModule } from 'src/modules/challenge-test/challenge-test.module';
+import { ChallengeTestModule } from '@modules/challenge-test/challenge-test.module';
+import { CheckTestModule } from '@modules/check-test/check-test.module';
 import { HomeComponent } from './components/home/home.component';
-import { NewTestModule } from 'src/modules/new-test/new-test.module';
+import { NewTestModule } from '@modules/new-test/new-test.module';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { PathMatch } from 'src/enums/path-match.enum';
+import { PathMatch } from '@enums/path-match.enum';
 import
 {
 	RouterModule,
@@ -18,6 +19,10 @@ const routes: Routes = [
 	{
 		path: 'pass',
 		loadChildren: () => ChallengeTestModule
+	},
+	{
+		path: 'check',
+		loadChildren: () => CheckTestModule
 	},
 	{
 		path: '',

@@ -6,7 +6,7 @@ import
 	FormArray,
 	FormControl
 } from '@angular/forms';
-import { FormBase } from 'src/base/form.base';
+import { FormBase } from '@base/form.base';
 
 export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 {

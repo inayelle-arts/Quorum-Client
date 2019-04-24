@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from '../material/material.module';
-import { SignModule } from 'src/modules/sign/sign.module';
+import { SignModule } from '@modules/sign/sign.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
