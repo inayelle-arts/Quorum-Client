@@ -4,29 +4,21 @@
 	</button>
 
 	<mat-menu #menu>
-		<button mat-menu-item routerLink="/new">
+		<button mat-menu-item routerLink="/new" *ngIf="loggedIn">
 			<mat-icon class="nav-link-icon">content_paste</mat-icon>
 			<span class="nav-link-text">Create</span>
 		</button>
-		<button mat-menu-item (click)="onSignInClick()">
+		<button mat-menu-item (click)="onSignInClick()" *ngIf="!loggedIn">
 			<mat-icon class="nav-link-icon">arrow_forward</mat-icon>
 			<span class="nav-link-text">Sign in</span>
 		</button>
-		<button mat-menu-item (click)="onSignUpClick()">
+		<button mat-menu-item (click)="onSignUpClick()" *ngIf="!loggedIn">
 			<mat-icon class="nav-link-icon">account_box</mat-icon>
 			<span class="nav-link-text">Sign up</span>
 		</button>
-		<button mat-menu-item>
+		<button mat-menu-item (click)="onLeaveClick()" *ngIf="loggedIn">
 			<mat-icon class="nav-link-icon">arrow_back</mat-icon>
 			<span class="nav-link-text">Leave</span>
-		</button>
-		<button mat-menu-item [routerLink]="['/pass', 1]">
-			<mat-icon class="nav-link-icon">test</mat-icon>
-			<span class="nav-link-text">Pass</span>
-		</button>
-		<button mat-menu-item [routerLink]="['/check', 1]">
-			<mat-icon class="nav-link-icon">playlist_add_check</mat-icon>
-			<span class="nav-link-text">Check</span>
 		</button>
 	</mat-menu>
 </div>

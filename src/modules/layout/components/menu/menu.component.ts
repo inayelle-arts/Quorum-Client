@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
+import { NotificationService } from '@services/notification.service';
+import { Router } from '@angular/router';
 import { SignInComponent } from '@modules/sign/components/sign-in/sign-in.component';
 import { SignUpComponent } from '@modules/sign/components/sign-up/sign-up.component';
+import { UserService } from '@services/user/user.service';
 
 @Component({
 	selector: 'q-menu',
@@ -10,11 +13,27 @@ import { SignUpComponent } from '@modules/sign/components/sign-up/sign-up.compon
 })
 export class MenuComponent
 {
+	private readonly _userService: UserService;
 	private readonly _bottomSheet: MatBottomSheet;
+	private readonly _notifyService: NotificationService;
+	private readonly _router: Router;
 
-	public constructor(bottomSheet: MatBottomSheet)
+	public constructor(
+		bottomSheet: MatBottomSheet,
+		userService: UserService,
+		router: Router,
+		notifyService: NotificationService
+	)
 	{
+		this._userService = userService;
 		this._bottomSheet = bottomSheet;
+		this._notifyService = notifyService;
+		this._router = router;
+	}
+
+	public get loggedIn(): boolean
+	{
+		return this._userService.loggedIn;
 	}
 
 	public onSignInClick(): void
@@ -25,5 +44,14 @@ export class MenuComponent
 	public onSignUpClick(): void
 	{
 		this._bottomSheet.open(SignUpComponent);
+	}
+
+	public onLeaveClick(): void
+	{
+		this._userService.unstore();
+
+		this._notifyService.notify('Good bye!');
+
+		this._router.navigate(['/']);
 	}
 }

@@ -8,6 +8,8 @@ export class CheckTestService extends HttpServiceBase
 
 	public getTestResults(id: number): Observable<CheckTestResultModel>
 	{
-		return this.http.get<CheckTestResultModel>(this.combineUrl(this._url, id));
+		const headers = this.authHeaders;
+
+		return this.http.get<CheckTestResultModel>(this.combineUrl(this._url, id), { headers: headers });
 	}
 }

@@ -12,11 +12,11 @@ export class ChallengeService extends HttpServiceBase
 
 	public getTestForChallenge(id: number): Observable<ChallengeTestResultModel>
 	{
-		return this.http.get<ChallengeTestResultModel>(this.combineUrl(this._url, id));
+		return this.http.get<ChallengeTestResultModel>(this.combineUrl(this._url, id), { headers: this.authHeaders });
 	}
 
 	public challenge(viewModel: ChallengedTestViewModel): Observable<ChallengeResultModel>
 	{
-		return this.http.post<ChallengeResultModel>(this._url, viewModel);
+		return this.http.post<ChallengeResultModel>(this._url, viewModel, { headers: this.authHeaders });
 	}
 }
