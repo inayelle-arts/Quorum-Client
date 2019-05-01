@@ -10,6 +10,10 @@ export class NewTestService extends HttpServiceBase
 
 	public createTest(viewModel: NewTestViewModel): Observable<any>
 	{
-		return this.http.post(this._url, viewModel);
+		const headers = this.authHeaders;
+
+		console.log(headers);
+
+		return this.http.post(this._url, viewModel, { headers: this.authHeaders });
 	}
 }

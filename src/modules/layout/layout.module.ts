@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from '../material/material.module';
 import { SignModule } from '@modules/sign/sign.module';
 import { RouterModule } from '@angular/router';
+import { ServicesModule } from '@services/services.module';
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
 		CommonModule,
 		MaterialModule,
 		SignModule,
-		RouterModule
+		RouterModule,
+		ServicesModule
 	],
 	exports: [
 		HeaderComponent,

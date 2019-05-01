@@ -14,12 +14,13 @@ import { NewQuestionComponent } from './components/new-question/new-question.com
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
 import { NewTestService } from '@modules/new-test/services/new-test.service';
+import { GuardsModule } from 'src/guards/guards.module';
 
 @NgModule({
 	declarations: [
-		NewTestComponent,
 		TagListComponent,
 		StepLabelComponent,
+		NewTestComponent,
 		NewQuestionComponent,
 		NewAnswerComponent,
 	],
@@ -28,6 +29,7 @@ import { NewTestService } from '@modules/new-test/services/new-test.service';
 		MaterialModule,
 		FormsModule,
 		ReactiveFormsModule,
+		GuardsModule,
 		NewTestRouting,
 		LeaveConfirmDialogModule
 	],
