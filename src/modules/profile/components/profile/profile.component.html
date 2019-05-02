@@ -1,0 +1,11 @@
+<div class="container-center">
+	<h1 class="w-100" style="margin-bottom: 20px;">
+		{{email}}
+	</h1>
+
+	<mat-list *ngIf="loaded" class="w-100">
+		<mat-list-item *ngFor="let preview of resultModels">
+			<q-preview [preview]="preview" class="w-100"></q-preview>
+		</mat-list-item>
+	</mat-list>
+</div>

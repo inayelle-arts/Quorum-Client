@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NewTestForm } from '../../forms/new-test.form';
 import { NewQuestionForm } from '../../forms/new-question.form';
 import { ComponentBase } from '../../../../base/component.base';
-import { NewTestService } from '@modules/new-test/services/new-test.service';
+import { TestService } from '@services/new-test.service';
 import { NewTestViewModel } from '@modules/new-test/view-models/new-test.view-model';
 import { NotificationService } from '@services/notification.service';
 
@@ -13,14 +13,14 @@ import { NotificationService } from '@services/notification.service';
 })
 export class NewTestComponent extends ComponentBase
 {
-	private readonly _newTestService: NewTestService;
+	private readonly _newTestService: TestService;
 	private readonly _notifyService: NotificationService;
 
 	private _isSent: boolean;
 
 	public readonly form: NewTestForm;
 
-	public constructor(newTestService: NewTestService, notifyService: NotificationService)
+	public constructor(newTestService: TestService, notifyService: NotificationService)
 	{
 		super();
 

@@ -13,7 +13,7 @@ import { StepLabelComponent } from './components/step-label/step-label.component
 import { NewQuestionComponent } from './components/new-question/new-question.component';
 import { NewAnswerComponent } from './components/new-answer/new-answer.component';
 import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
-import { NewTestService } from '@modules/new-test/services/new-test.service';
+import { TestService } from '@services/new-test.service';
 import { GuardsModule } from 'src/guards/guards.module';
 
 @NgModule({
@@ -34,7 +34,7 @@ import { GuardsModule } from 'src/guards/guards.module';
 		LeaveConfirmDialogModule
 	],
 	providers: [
-		NewTestService
+		TestService
 	]
 })
 export class NewTestModule { }

@@ -12,7 +12,7 @@ import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-
 import { MaterialModule } from '@modules/material/material.module';
 import { NgModule } from '@angular/core';
 import { ServicesModule } from '@services/services.module';
-import { ChallengeService } from '@modules/challenge-test/services/challenge.service';
+import { ChallengeService } from '@services/challenge.service';
 
 @NgModule({
 	declarations: [

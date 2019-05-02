@@ -15,6 +15,7 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RootComponent } from './components/root/root.component';
 import { RootRouting } from './root.routing';
+import { MyTestsModule } from '@modules/my-tests/my-tests.module';
 
 @NgModule({
 	bootstrap: [
@@ -33,7 +34,8 @@ import { RootRouting } from './root.routing';
 		LayoutModule,
 		NewTestModule,
 		ChallengeTestModule,
-		CheckTestModule
+		CheckTestModule,
+		MyTestsModule
 	],
 	providers: [
 		{

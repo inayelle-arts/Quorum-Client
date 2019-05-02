@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChallengeService } from '@modules/challenge-test/services/challenge.service';
+import { ChallengeService } from '@services/challenge.service';
 import { ChallengeTestForm } from '../../forms/challenge-test.form';
 import
 {
