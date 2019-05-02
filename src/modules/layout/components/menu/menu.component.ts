@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { SignInComponent } from '@modules/sign/components/sign-in/sign-in.component';
 import { SignUpComponent } from '@modules/sign/components/sign-up/sign-up.component';
 import { UserService } from '@services/user/user.service';
+import { UserRole } from '@enums/user-role.enum';
 
 @Component({
 	selector: 'q-menu',
@@ -36,6 +37,11 @@ export class MenuComponent
 		return this._userService.loggedIn;
 	}
 
+	public get isTutor(): boolean
+	{
+		return this._userService.current.role === UserRole.Tutor;
+	}
+
 	public onSignInClick(): void
 	{
 		this._bottomSheet.open(SignInComponent);
@@ -53,5 +59,15 @@ export class MenuComponent
 		this._notifyService.notify('Good bye!');
 
 		this._router.navigate(['/']);
+	}
+
+	public onProfileClick(): void
+	{
+		this._router.navigate(['/profile']);
+	}
+
+	public onMyTestsClick(): void
+	{
+		this._router.navigate(['/my-tests']);
 	}
 }

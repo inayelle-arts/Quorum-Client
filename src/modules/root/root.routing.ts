@@ -10,8 +10,18 @@ import
 	RouterModule,
 	Routes
 } from '@angular/router';
+import { ProfileModule } from '@modules/profile/profile.module';
+import { MyTestsModule } from '@modules/my-tests/my-tests.module';
 
 const routes: Routes = [
+	{
+		path: 'my-tests',
+		loadChildren: () => MyTestsModule
+	},
+	{
+		path: 'profile',
+		loadChildren: () => ProfileModule
+	},
 	{
 		path: 'new',
 		loadChildren: () => NewTestModule

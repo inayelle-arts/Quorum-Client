@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CheckTestComponent } from './components/check-test/check-test.component';
 import { CheckTestRouting } from '@modules/check-test/check-test.routing';
 import { MaterialModule } from '@modules/material/material.module';
-import { CheckTestService } from '@modules/check-test/services/check-test.service';
+import { CheckTestService } from '@services/check-test.service';
 
 @NgModule({
 	declarations: [

@@ -1,0 +1,8 @@
+<div class="container-center">
+	<h1 class="w-100" style="margin-bottom: 30px">My tests</h1>
+	<mat-list *ngIf="loaded">
+		<mat-list-item *ngFor="let preview of testPreviews">
+			<q-test-preview [preview]="preview" class="w-100"></q-test-preview>
+		</mat-list-item>
+	</mat-list>
+</div>
