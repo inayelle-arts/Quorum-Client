@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { SignInForm } from '../../forms/sign-in.form';
-import { SignService } from '../../services/sign.service';
+import { NotificationService } from '@services/notification/notification.service';
+import { SignInForm } from '@modules/sign/forms/sign-in.form';
+import { SignService } from '@services/sign/sign.service';
 import { UserService } from '@services/user/user.service';
-import { NotificationService } from '@services/notification.service';
 
 @Component({
 	selector: 'q-sign-in',

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NewTestForm } from '../../forms/new-test.form';
-import { NewQuestionForm } from '../../forms/new-question.form';
-import { ComponentBase } from '../../../../base/component.base';
-import { TestService } from '@services/new-test.service';
-import { NewTestViewModel } from '@modules/new-test/view-models/new-test.view-model';
-import { NotificationService } from '@services/notification.service';
+import { NewQuestionForm } from '@modules/new-test/forms/new-question.form';
+import { NewTestForm } from '@modules/new-test/forms/new-test.form';
+import { NewTestViewModel } from '@services/test/view-models/new-test.view-model';
+import { NotificationService } from '@services/notification/notification.service';
+import { TestService } from '@services/test/test.service';
+import { ComponentBase } from '@base/component.base';
 
 @Component({
 	selector: 'q-new-test',

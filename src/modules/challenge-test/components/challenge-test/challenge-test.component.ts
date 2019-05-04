@@ -1,13 +1,13 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChallengeService } from '@services/challenge.service';
-import { ChallengeTestForm } from '../../forms/challenge-test.form';
+import { ChallengeService } from '@services/challenge/challenge.service';
 import
 {
 	Component,
 	OnInit
 } from '@angular/core';
-import { ComponentBase } from '../../../../base/component.base';
-import { NotificationService } from '@services/notification.service';
+import { NotificationService } from '@services/notification/notification.service';
+import { ChallengeTestForm } from '@modules/challenge-test/forms/challenge-test.form';
+import { ComponentBase } from '@base/component.base';
 
 @Component({
 	selector: 'q-challenge-test',

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { SignUpForm } from '../../forms/sign-up.form';
-import { SignService } from '../../services/sign.service';
-import { NotificationService } from '@services/notification.service';
+import { NotificationService } from '@services/notification/notification.service';
+import { SignService } from '@services/sign/sign.service';
+import { SignUpForm } from '@modules/sign/forms/sign-up.form';
+import { UserRole } from '@enums/user-role.enum';
 import { UserService } from '@services/user/user.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class SignUpComponent
 	private _isSent: boolean;
 
 	public readonly form: SignUpForm;
-	public readonly userTypes: string[];
+	public readonly userRoles: string[];
 
 	public constructor(signService: SignService, notifyService: NotificationService, userService: UserService)
 	{
@@ -27,7 +28,7 @@ export class SignUpComponent
 		this._isSent = false;
 
 		this.form = new SignUpForm();
-		this.userTypes = ['Student', 'Tutor'];
+		this.userRoles = Object.keys(UserRole).map(k => k as string);
 	}
 
 	public get isSent(): boolean

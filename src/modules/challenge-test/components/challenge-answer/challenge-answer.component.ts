@@ -1,4 +1,4 @@
-import { ChallengeAnswerForm } from '../../forms/challenge-answer.form';
+import { ChallengeAnswerForm } from '@modules/challenge-test/forms/challenge-answer.form';
 import
 {
 	Component,

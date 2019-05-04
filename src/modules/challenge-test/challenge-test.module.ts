@@ -8,11 +8,10 @@ import
 	FormsModule,
 	ReactiveFormsModule
 } from '@angular/forms';
-import { LeaveConfirmDialogModule } from '../leave-confirm-dialog/leave-confirm-dialog.module';
+import { LeaveConfirmDialogModule } from '@modules/leave-confirm-dialog/leave-confirm-dialog.module';
 import { MaterialModule } from '@modules/material/material.module';
 import { NgModule } from '@angular/core';
 import { ServicesModule } from '@services/services.module';
-import { ChallengeService } from '@services/challenge.service';
 
 @NgModule({
 	declarations: [
@@ -33,9 +32,6 @@ import { ChallengeService } from '@services/challenge.service';
 		ChallengeTestComponent,
 		ChallengeQuestionComponent,
 		ChallengeAnswerComponent
-	],
-	providers: [
-		ChallengeService
 	]
 })
 export class ChallengeTestModule { }

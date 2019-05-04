@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ProfileRouting } from './profile.routing';
-import { ProfileComponent } from './components/profile/profile.component';
 import { GuardsModule } from 'src/guards/guards.module';
 import { MaterialModule } from '@modules/material/material.module';
+import { NgModule } from '@angular/core';
 import { PreviewComponent } from './components/preview/preview.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileRouting } from './profile.routing';
 
 @NgModule({
 	declarations: [ProfileComponent, PreviewComponent],

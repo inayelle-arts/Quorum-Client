@@ -1,7 +1,12 @@
+import
+{
+	FormArray,
+	FormControl,
+	Validators
+} from '@angular/forms';
 import { FormBase } from '@base/form.base';
-import { NewTestViewModel } from '../view-models/new-test.view-model';
-import { FormControl, Validators, FormArray } from '@angular/forms';
 import { NewQuestionForm } from '@modules/new-test/forms/new-question.form';
+import { NewTestViewModel } from '@services/test/view-models/new-test.view-model';
 
 export class NewTestForm extends FormBase<NewTestViewModel>
 {

@@ -1,6 +1,6 @@
-import { ChallengedTestViewModel } from '../view-models/challenged-test.view-model';
+import { ChallengedTestViewModel } from '@services/challenge/view-models/challenged-test.view-model';
 import { ChallengeQuestionForm } from './challenge-question.form';
-import { ChallengeTestResultModel } from '../result-models/challenge-test.result-model';
+import { ChallengeTestResultModel } from '@services/challenge/result-models/challenge-test.result-model';
 import
 {
 	FormArray,

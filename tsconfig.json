@@ -19,32 +19,35 @@
 			"dom"
 		],
 		"paths": {
-			"@modules/*": [
-				"src/modules/*"
-			],
-			"@services/*": [
-				"src/services/*"
-			],
 			"@base/*": [
 				"src/base/*"
-			],
-			"@enums/*": [
-				"src/enums/*"
-			],
-			"@styles/*": [
-				"src/styles/*"
-			],
-			"@assets/*": [
-				"src/assets/*"
 			],
 			"@directives/*": [
 				"src/directives/*"
 			],
-			"@interfaces/*": [
-				"src/interfaces/*"
+			"@enums/*": [
+				"src/enums/*"
 			],
 			"@env/*": [
 				"src/environments/*"
+			],
+			"@guards/*": [
+				"src/guards/*"
+			],
+			"@interfaces/*": [
+				"src/interfaces/*"
+			],
+			"@modules/*": [
+				"src/modules/*"
+			],
+			"@result-models/*": [
+				"src/result-models/*"
+			],
+			"@services/*": [
+				"src/services/*"
+			],
+			"@styles/*": [
+				"src/styles/*"
 			]
 		}
 	}

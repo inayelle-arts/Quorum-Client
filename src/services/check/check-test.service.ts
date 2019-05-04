@@ -1,7 +1,7 @@
 import { HttpServiceBase } from '@base/http-service.base';
 import { Observable, of } from 'rxjs';
-import { CheckTestResultModel } from '@modules/check-test/result-models/check-test.result-model';
-import { ChallengeResultPreviewResultModel } from 'src/result-models/challenge-result-preview.result-mode';
+import { CheckTestResultModel } from '@services/check/result-models/check-test.result-model';
+import { ChallengeResultPreviewResultModel } from '@services/challenge/result-models/challenge-result-preview.result-mode';
 
 export class CheckTestService extends HttpServiceBase
 {

@@ -1,7 +1,7 @@
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { UserService } from '@services/user/user.service';
 import { Injectable } from '@angular/core';
-import { NotificationService } from '@services/notification.service';
+import { NotificationService } from '@services/notification/notification.service';
 
 @Injectable()
 export class UserOnlyGuard implements CanActivate

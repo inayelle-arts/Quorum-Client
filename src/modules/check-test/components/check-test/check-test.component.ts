@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckTestService } from '@services/check-test.service';
-import { CheckTestResultModel } from '@modules/check-test/result-models/check-test.result-model';
+import { CheckTestService } from '@services/check/check-test.service';
+import { CheckTestResultModel } from '@services/check/result-models/check-test.result-model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

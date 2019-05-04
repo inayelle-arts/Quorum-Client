@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ChallengeResultPreviewResultModel } from 'src/result-models/challenge-result-preview.result-mode';
+import { ChallengeResultPreviewResultModel } from '@services/challenge/result-models/challenge-result-preview.result-mode';
 import { ComponentBase } from '@base/component.base';
 import { Router } from '@angular/router';
 

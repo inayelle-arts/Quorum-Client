@@ -1,9 +1,9 @@
+import { ChallengedTestViewModel } from './view-models/challenged-test.view-model';
+import { ChallengeResultModel } from './result-models/challenge-result-model';
+import { ChallengeTestResultModel } from './result-models/challenge-test.result-model';
 import { HttpServiceBase } from '@base/http-service.base';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ChallengeTestResultModel } from '@modules/challenge-test/result-models/challenge-test.result-model';
-import { ChallengedTestViewModel } from '@modules/challenge-test/view-models/challenged-test.view-model';
-import { ChallengeResultModel } from '@modules/challenge-test/result-models/challenge-result-model';
 
 @Injectable()
 export class ChallengeService extends HttpServiceBase

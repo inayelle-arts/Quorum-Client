@@ -1,6 +1,10 @@
 import { FormBase } from '@base/form.base';
-import { FormControl, Validators } from '@angular/forms';
-import { SignInViewModel } from '../view-models/sign-in.view-model';
+import
+{
+	FormControl,
+	Validators
+} from '@angular/forms';
+import { SignInViewModel } from '@services/sign/view-models/sign-in.view-model';
 
 export class SignInForm extends FormBase<SignInViewModel>
 {

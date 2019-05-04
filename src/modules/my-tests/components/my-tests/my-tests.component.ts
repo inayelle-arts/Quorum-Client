@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import
+{
+	Component,
+	OnInit
+} from '@angular/core';
 import { ComponentBase } from '@base/component.base';
-import { TestService } from '@services/new-test.service';
-import { TestPreviewResultModel } from 'src/result-models/test-preview.result-model';
+import { TestPreviewResultModel } from '@services/test/result-models/test-preview.result-model';
+import { TestService } from '@services/test/test.service';
 
 @Component({
 	selector: 'q-my-tests',

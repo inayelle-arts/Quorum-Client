@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NewQuestionForm } from '../../forms/new-question.form';
+import { NewQuestionForm } from '@modules/new-test/forms/new-question.form';
 
 @Component({
 	selector: 'q-new-question',

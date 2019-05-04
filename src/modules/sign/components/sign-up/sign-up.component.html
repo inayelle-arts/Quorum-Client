@@ -9,8 +9,8 @@
 			<mat-label>I`m a...</mat-label>
 
 			<mat-select [formControl]="form.userType">
-				<mat-option *ngFor="let userType of userTypes" [value]="userType">
-					{{userType}}
+				<mat-option *ngFor="let userRole of userRoles" [value]="userRole">
+					{{userRole}}
 				</mat-option>
 			</mat-select>
 

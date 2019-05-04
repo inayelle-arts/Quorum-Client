@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { NotificationService } from '@services/notification.service';
+import { NotificationService } from '@services/notification/notification.service';
 import { UserService } from './user/user.service';
-import { ChallengeService } from './challenge.service';
-import { CheckTestService } from './check-test.service';
-import { TestService } from './new-test.service';
-import { ClipboardService } from './clipboard.service';
+import { ChallengeService } from './challenge/challenge.service';
+import { CheckTestService } from './check/check-test.service';
+import { TestService } from './test/test.service';
+import { ClipboardService } from './clipboard/clipboard.service';
 
 @NgModule({
 	providers: [

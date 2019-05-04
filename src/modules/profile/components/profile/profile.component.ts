@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ComponentBase } from '@base/component.base';
 import { UserService } from '@services/user/user.service';
 import { UserRole } from '@enums/user-role.enum';
-import { CheckTestService } from '@services/check-test.service';
-import { ChallengeResultPreviewResultModel } from 'src/result-models/challenge-result-preview.result-mode';
+import { CheckTestService } from '@services/check/check-test.service';
+import { ChallengeResultPreviewResultModel } from '@services/challenge/result-models/challenge-result-preview.result-mode';
 import { Observable } from 'rxjs';
 
 @Component({

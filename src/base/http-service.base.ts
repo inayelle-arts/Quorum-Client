@@ -1,5 +1,9 @@
+import
+{
+	HttpClient,
+	HttpHeaders
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserService } from '@services/user/user.service';
 
 @Injectable()

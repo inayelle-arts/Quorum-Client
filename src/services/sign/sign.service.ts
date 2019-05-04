@@ -1,10 +1,10 @@
 import { HttpServiceBase } from '@base/http-service.base';
 import { Injectable } from '@angular/core';
-import { SignInViewModel } from '../view-models/sign-in.view-model';
+import { SignInViewModel } from './view-models/sign-in.view-model';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/catch';
-import { SignUpViewModel } from '../view-models/sign-up.view-model';
-import { SignResultModel } from '../result-models/sign.result-model';
+import { SignUpViewModel } from './view-models/sign-up.view-model';
+import { SignResultModel } from './result-models/sign.result-model';
 
 @Injectable()
 export class SignService extends HttpServiceBase

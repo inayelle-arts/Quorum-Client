@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
+import
+{
+	FormsModule,
+	ReactiveFormsModule
+} from '@angular/forms';
 import { MaterialModule } from '@modules/material/material.module';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignService } from '@services/sign/sign.service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { SignService } from './services/sign.service';
 
 @NgModule({
 	declarations: [

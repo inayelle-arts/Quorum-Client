@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MaterialModule } from '../material/material.module';
-import { SignModule } from '@modules/sign/sign.module';
+import { MaterialModule } from '@modules/material/material.module';
+import { MenuComponent } from './components/menu/menu.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ServicesModule } from '@services/services.module';
+import { SignModule } from '@modules/sign/sign.module';
 
 @NgModule({
 	declarations: [

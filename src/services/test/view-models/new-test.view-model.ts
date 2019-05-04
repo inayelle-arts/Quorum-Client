@@ -1,4 +1,4 @@
-import { NewQuestionViewModel } from '@modules/new-test/view-models/new-question.view-model';
+import { NewQuestionViewModel } from '@services/test/view-models/new-question.view-model';
 
 export interface NewTestViewModel
 {

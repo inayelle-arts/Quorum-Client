@@ -1,6 +1,10 @@
 import { FormBase } from '@base/form.base';
-import { NewAnswerViewModel } from '../view-models/new-answer.view-model';
-import { FormControl, Validators } from '@angular/forms';
+import
+{
+	FormControl,
+	Validators
+} from '@angular/forms';
+import { NewAnswerViewModel } from '@services/test/view-models/new-answer.view-model';
 import { NewQuestionForm } from '@modules/new-test/forms/new-question.form';
 
 export class NewAnswerForm extends FormBase<NewAnswerViewModel>

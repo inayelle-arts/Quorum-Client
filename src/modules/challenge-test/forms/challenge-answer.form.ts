@@ -1,8 +1,8 @@
-import { FormBase } from '@base/form.base';
-import { ChallengedAnswerViewModel } from '../view-models/challenged-answer.view-model';
-import { FormControl } from '@angular/forms';
+import { ChallengeAnswerResultModel } from '@services/challenge/result-models/challenge-answer.result-model';
+import { ChallengedAnswerViewModel } from '@services/challenge/view-models/challenged-answer.view-model';
 import { ChallengeQuestionForm } from './challenge-question.form';
-import { ChallengeAnswerResultModel } from '../result-models/challenge-answer.result-model';
+import { FormBase } from '@base/form.base';
+import { FormControl } from '@angular/forms';
 
 export class ChallengeAnswerForm extends FormBase<ChallengedAnswerViewModel>
 {

@@ -1,8 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { TestPreviewResultModel } from 'src/result-models/test-preview.result-model';
-import { NotificationService } from '@services/notification.service';
+import { ClipboardService } from '@services/clipboard/clipboard.service';
+import
+{
+	Component,
+	Input
+} from '@angular/core';
 import { ComponentBase } from '@base/component.base';
-import { ClipboardService } from '@services/clipboard.service';
+import { NotificationService } from '@services/notification/notification.service';
+import { TestPreviewResultModel } from '@services/test/result-models/test-preview.result-model';
 
 @Component({
 	selector: 'q-test-preview',

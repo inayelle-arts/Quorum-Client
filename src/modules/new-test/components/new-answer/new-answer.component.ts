@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { NewAnswerForm } from '../../forms/new-answer.form';
+import { NewAnswerForm } from '@modules/new-test/forms/new-answer.form';
 
 @Component({
 	selector: 'q-new-answer',

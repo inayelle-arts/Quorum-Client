@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
-import { NotificationService } from '@services/notification.service';
+import { NotificationService } from '@services/notification/notification.service';
 import { Router } from '@angular/router';
 import { SignInComponent } from '@modules/sign/components/sign-in/sign-in.component';
 import { SignUpComponent } from '@modules/sign/components/sign-up/sign-up.component';
