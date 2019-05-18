@@ -3,6 +3,7 @@ import { NotificationService } from '@services/notification/notification.service
 import { SignInForm } from '@modules/sign/forms/sign-in.form';
 import { SignService } from '@services/sign/sign.service';
 import { UserService } from '@services/user/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'q-sign-in',
@@ -42,6 +43,14 @@ export class SignInComponent
 		this._isSent = true;
 
 		this._signService.signIn(this.form.viewModel)
+			.catch(x => 
+			{
+				this._notifyService.notify('Signing in failed...');
+
+				this._isSent = false;
+
+				return Observable.throw(x);
+			})
 			.subscribe(result =>
 			{
 				this._userService.store(result.token);

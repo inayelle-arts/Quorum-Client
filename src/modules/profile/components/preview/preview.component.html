@@ -1,10 +1,23 @@
-<mat-card (click)="onClick()">
+<mat-card>
 	<mat-card-title-group>
 		<mat-card-title>
-			{{preview.name}}
+			<span>
+				{{preview.name}}
+			</span>
 		</mat-card-title>
 		<mat-card-subtitle>
-			{{preview.userEmail}}
+			by: {{preview.userEmail}}
 		</mat-card-subtitle>
 	</mat-card-title-group>
+
+
+	<mat-action-list>
+		<button mat-button (click)="onViewClick()">
+			VIEW
+		</button>
+		<button mat-button (click)="onShareClick()">
+			SHARE
+		</button>
+	</mat-action-list>
+
 </mat-card>

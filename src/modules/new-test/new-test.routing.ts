@@ -7,7 +7,7 @@ import
 	RouterModule,
 	Routes
 } from '@angular/router';
-import { UserOnlyGuard } from 'src/guards/user-only.guard';
+import { UserOnlyGuard } from '@guards/user-only.guard';
 
 const routes: Routes =
 	[

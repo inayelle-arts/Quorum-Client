@@ -15,4 +15,9 @@ export class NewQuestionComponent
 	{
 		this.form.removeAnswer(index);
 	}
+
+	public get isAnswerRemoveable(): boolean
+	{
+		return this.form.answers.length > 2;
+	}
 }

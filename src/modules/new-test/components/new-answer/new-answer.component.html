@@ -5,11 +5,12 @@
 
 	<div class="answer-actions">
 		<input matInput type="text" [formControl]="form.content">
-		<mat-checkbox matTooltip="Mark as correct" [formControl]="form.isCorrect" color="primary">
-		</mat-checkbox>
-		<button type="button" matTooltip="Remove answer" mat-icon-button color="warn" (click)="remove()">
+		<button type="button" matTooltip="Remove answer" mat-icon-button color="warn" (click)="remove()"
+			*ngIf="isRemoveable">
 			<mat-icon>remove</mat-icon>
 		</button>
+		<mat-checkbox matTooltip="Mark as correct" [formControl]="form.isCorrect" color="primary">
+		</mat-checkbox>
 	</div>
 
 	<mat-error>

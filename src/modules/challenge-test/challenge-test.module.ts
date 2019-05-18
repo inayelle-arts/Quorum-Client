@@ -29,9 +29,9 @@ import { ServicesModule } from '@services/services.module';
 		ChallengeTestRouting,
 	],
 	exports: [
-		ChallengeTestComponent,
-		ChallengeQuestionComponent,
-		ChallengeAnswerComponent
+		// ChallengeTestComponent,
+		// ChallengeQuestionComponent,
+		// ChallengeAnswerComponent
 	]
 })
 export class ChallengeTestModule { }

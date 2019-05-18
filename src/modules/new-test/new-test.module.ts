@@ -29,9 +29,9 @@ import { TestService } from '@services/test/test.service';
 		MaterialModule,
 		FormsModule,
 		ReactiveFormsModule,
+		LeaveConfirmDialogModule,
 		GuardsModule,
-		NewTestRouting,
-		LeaveConfirmDialogModule
+		NewTestRouting
 	],
 	providers: [
 		TestService

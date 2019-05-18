@@ -1,6 +1,11 @@
 <div class="container-center">
-	<h1 class="w-100" style="margin-bottom: 20px;">
-		{{email}}
+	<h1 class="w-100" style="margin-bottom: 50px;">
+		<span *ngIf="isTutor">
+			People's challenge results
+		</span>
+		<span *ngIf="isStudent">
+			Your challenge results
+		</span>
 	</h1>
 
 	<mat-list *ngIf="loaded" class="w-100">

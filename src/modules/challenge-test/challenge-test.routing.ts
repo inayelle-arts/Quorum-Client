@@ -11,10 +11,6 @@ const routes: Routes =
 			component: ChallengeTestComponent,
 			pathMatch: PathMatch.Full,
 			canDeactivate: [LeaveUnsavedDataGuard]
-		},
-		{
-			path: '**',
-			redirectTo: '/'
 		}
 	];
 

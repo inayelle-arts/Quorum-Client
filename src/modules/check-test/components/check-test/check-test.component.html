@@ -8,8 +8,11 @@
 
 	<div *ngIf="loaded" class="w-75">
 		<h1 class="w-100">
-			{{testModel.name}} | [{{testModel.userScore}}/{{testModel.maximumScore}}]
+			{{testModel.name}}
 		</h1>
+		<h2>
+			{{testModel.userScore}}/{{testModel.maximumScore}}
+		</h2>
 
 		<mat-vertical-stepper>
 			<mat-step *ngFor="let question of testModel.questions" [label]="question.content">

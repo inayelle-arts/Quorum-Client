@@ -4,6 +4,7 @@ import { CheckTestComponent } from './components/check-test/check-test.component
 import { CheckTestRouting } from '@modules/check-test/check-test.routing';
 import { MaterialModule } from '@modules/material/material.module';
 import { CheckTestService } from '@services/check/check-test.service';
+import { GuardsModule } from '@guards/guards.module';
 
 @NgModule({
 	declarations: [
@@ -12,6 +13,7 @@ import { CheckTestService } from '@services/check/check-test.service';
 	imports: [
 		CommonModule,
 		MaterialModule,
+		GuardsModule,
 		CheckTestRouting
 	],
 	providers: [

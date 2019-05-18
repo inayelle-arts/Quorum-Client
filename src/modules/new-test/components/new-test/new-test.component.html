@@ -54,7 +54,7 @@
 									<mat-icon>add</mat-icon>
 								</button>
 								<button mat-icon-button type="button" matTooltip="Remove question" color="warn"
-									(click)="form.removeQuestion(i)">
+									(click)="form.removeQuestion(i)" *ngIf="isQuestionRemoveable">
 									<mat-icon>remove</mat-icon>
 								</button>
 							</div>

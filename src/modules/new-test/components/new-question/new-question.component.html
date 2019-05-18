@@ -11,5 +11,5 @@
 <span>Answers</span>
 
 <q-new-answer *ngFor="let answer of form.answers.controls;let i=index" [form]="answer" [index]="i"
-	(onRemoveClick)="removeAnswer($event)">
+	(onRemoveClick)="removeAnswer($event)" [isRemoveable]="isAnswerRemoveable">
 </q-new-answer>

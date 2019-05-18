@@ -57,6 +57,11 @@ export class NewTestComponent extends ComponentBase
 		question.addAnswer();
 	}
 
+	public get isQuestionRemoveable(): boolean
+	{
+		return this.form.questions.length > 1;
+	}
+
 	public onSubmit(): void
 	{
 		if (this.form.invalid)

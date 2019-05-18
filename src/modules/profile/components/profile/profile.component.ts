@@ -41,6 +41,16 @@ export class ProfileComponent extends ComponentBase implements OnInit
 		return this._userService.current.role;
 	}
 
+	public get isTutor(): boolean
+	{
+		return this.userRole === UserRole.Tutor;
+	}
+
+	public get isStudent(): boolean
+	{
+		return this.userRole === UserRole.Student;
+	}
+
 	public get resultModels(): ChallengeResultPreviewResultModel[]
 	{
 		return this._results;
@@ -66,6 +76,7 @@ export class ProfileComponent extends ComponentBase implements OnInit
 				}
 		}
 	}
+
 
 	private _loadStudentOwnResults(): void
 	{
