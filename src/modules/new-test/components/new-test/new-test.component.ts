@@ -46,9 +46,12 @@ export class NewTestComponent extends ComponentBase
 		return this.form.dirty && !this._isSent;
 	}
 
-	public addTag(tag: any): void
+	public addTag(tag: string): void
 	{
-		this.form.addTag(tag);
+		if (tag)
+		{
+			this.form.addTag(tag);
+		}
 	}
 
 	public removeTag(tag: string): void
