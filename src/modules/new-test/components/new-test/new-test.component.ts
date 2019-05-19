@@ -6,6 +6,10 @@ import { NotificationService } from '@services/notification/notification.service
 import { TestService } from '@services/test/test.service';
 import { ComponentBase } from '@base/component.base';
 
+import 'rxjs/add/operator/catch';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Component({
 	selector: 'q-new-test',
 	templateUrl: './new-test.component.html',

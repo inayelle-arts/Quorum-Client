@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RootComponent } from './components/root/root.component';
 import { RootRouting } from './root.routing';
+import { InterceptorsModule } from 'src/interceptors/interceptors.module';
 
 @NgModule({
 	bootstrap: [
@@ -27,6 +28,7 @@ import { RootRouting } from './root.routing';
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		InterceptorsModule,
 		LayoutModule,
 		RootRouting
 	],

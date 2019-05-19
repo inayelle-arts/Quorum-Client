@@ -1,33 +1,36 @@
-import { UserInfo } from './user.info';
 import { Injectable } from '@angular/core';
-import { Token } from './token';
+import { NotificationService } from '@services/notification/notification.service';
+import { JwtToken } from './jwt/jwt-token';
+import { JwtPayload } from './jwt/jwt-payload';
 
 @Injectable()
 export class UserService
 {
 	private static readonly StorageKey: string = "token";
 
-	private _token: Token;
+	private readonly _notifyService: NotificationService;
 
-	public constructor()
+	private _token: JwtToken = null;
+
+	public constructor(notifyService: NotificationService)
 	{
-		const rawToken = localStorage.getItem(UserService.StorageKey);
+		this._notifyService = notifyService;
 
-		if (rawToken)
+		this._restoreUser();
+	}
+
+	public store(token: string | JwtToken): void
+	{
+		if (token instanceof JwtToken)
 		{
-			this.store(rawToken);
+			this._token = token;
 		}
 		else
 		{
-			this._token = null;
+			this._token = new JwtToken(token);
 		}
-	}
 
-	public store(tokenString: string): void
-	{
-		this._token = new Token(tokenString);
-
-		localStorage.setItem(UserService.StorageKey, tokenString);
+		localStorage.setItem(UserService.StorageKey, this._token.raw);
 	}
 
 	public unstore(): void
@@ -41,11 +44,11 @@ export class UserService
 		return this._token.raw;
 	}
 
-	public get current(): UserInfo
+	public get current(): JwtPayload
 	{
 		if (this.loggedIn)
 		{
-			return this._token.userInfo;
+			return this._token.payload;
 		}
 
 		return null;
@@ -53,6 +56,31 @@ export class UserService
 
 	public get loggedIn(): boolean
 	{
+		if (this._token && this._token.isExpired())
+		{
+			this._notifyService.notify('Session expired. Please, relogin.');
+			this.unstore();
+		}
+
 		return this._token != null;
+	}
+
+	private _restoreUser(): void
+	{
+		const rawToken = localStorage.getItem(UserService.StorageKey);
+
+		if (rawToken)
+		{
+			const token = new JwtToken(rawToken);
+
+			if (token.isExpired())
+			{
+				return;
+			}
+			else
+			{
+				this.store(token);
+			}
+		}
 	}
 }
