@@ -16,6 +16,7 @@ export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 	{
 		super({
 			sourceTestId: new FormControl(testModel.id),
+			challengedAt: new FormControl(),
 			questions: new FormArray([])
 		});
 
@@ -29,6 +30,11 @@ export class ChallengeTestForm extends FormBase<ChallengedTestViewModel>
 		return this.getArray('questions');
 	}
 
+	public get challengedAt() : FormControl
+	{
+		return this.getControl('challengedAt');
+	}
+	
 	public questionAt(index: number): ChallengeQuestionForm
 	{
 		return this.questions.get([index]) as ChallengeQuestionForm;

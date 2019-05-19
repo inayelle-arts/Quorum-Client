@@ -2,6 +2,6 @@ export interface ChallengeResultPreviewResultModel
 {
 	id: number;
 	name: string;
-	date: string;
+	challengedAt: string;
 	userEmail: string;
 }
