@@ -6,10 +6,9 @@
 			</span>
 		</mat-card-title>
 		<mat-card-subtitle>
-			by: {{preview.userEmail}}
+			{{preview.userEmail}} challenged at {{preview.challengedAt}}
 		</mat-card-subtitle>
 	</mat-card-title-group>
-
 
 	<mat-action-list>
 		<button mat-button (click)="onViewClick()">
@@ -19,5 +18,5 @@
 			SHARE
 		</button>
 	</mat-action-list>
-
+	
 </mat-card>

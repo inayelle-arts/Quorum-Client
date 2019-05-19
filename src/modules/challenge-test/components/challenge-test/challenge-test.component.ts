@@ -70,6 +70,8 @@ export class ChallengeTestComponent extends ComponentBase implements OnInit
 		this._isSent = true;
 
 		const viewModel = this._form.viewModel;
+		
+		viewModel.challengedAt = new Date().toDateString();
 
 		this._notifyService.notify('Posting your results...');
 
