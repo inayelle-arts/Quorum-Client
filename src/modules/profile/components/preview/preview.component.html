@@ -1,22 +1,26 @@
 <mat-card>
-	<mat-card-title-group>
-		<mat-card-title>
+    <mat-card-title-group>
+        <mat-card-title>
 			<span>
 				{{preview.name}}
 			</span>
-		</mat-card-title>
-		<mat-card-subtitle>
-			{{preview.userEmail}} challenged at {{preview.challengedAt}}
-		</mat-card-subtitle>
-	</mat-card-title-group>
+        </mat-card-title>
+        <mat-card-subtitle>
+            challenged by {{preview.userEmail}} at {{preview.challengedAt}}
+        </mat-card-subtitle>
+    </mat-card-title-group>
 
-	<mat-action-list>
-		<button mat-button (click)="onViewClick()">
-			VIEW
-		</button>
-		<button mat-button (click)="onShareClick()">
-			SHARE
-		</button>
-	</mat-action-list>
-	
+    <mat-action-list>
+        <button mat-button [class.bad-result]="isLowerThenAcceptable"
+                [class.excellent-result]="isGreaterThenGood">
+            {{preview.userScore / preview.maximumScore | percent}}
+        </button>
+        <button mat-button (click)="onViewClick()">
+            VIEW
+        </button>
+        <button mat-button (click)="onShareClick()">
+            SHARE
+        </button>
+    </mat-action-list>
+
 </mat-card>

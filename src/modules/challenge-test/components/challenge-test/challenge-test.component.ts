@@ -71,7 +71,7 @@ export class ChallengeTestComponent extends ComponentBase implements OnInit
 
 		const viewModel = this._form.viewModel;
 		
-		viewModel.challengedAt = new Date().toDateString();
+		viewModel.challengedAt = new Date().toUTCString();
 
 		this._notifyService.notify('Posting your results...');
 

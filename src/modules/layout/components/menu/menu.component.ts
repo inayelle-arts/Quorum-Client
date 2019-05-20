@@ -63,7 +63,7 @@ export class MenuComponent
 
 	public onProfileClick(): void
 	{
-		this._router.navigate(['/profile']);
+		this._router.navigate(['/results']);
 	}
 
 	public onMyTestsClick(): void

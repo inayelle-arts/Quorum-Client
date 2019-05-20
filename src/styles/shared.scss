@@ -7,9 +7,31 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Alegreya Sans', 'Material Icons' sans-serif;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+.mat-icon {
+	font-family: 'Material Icons', sans-serif;
 }
 
 body {
 	background: url('~/assets/background.png') repeat;
+}
+
+.spacer {
+	flex: 1 1 auto;
+	user-select: none !important;
+}
+
+textarea {
+	min-height: 1.5em !important;
+	height: 1.5em;
+	
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.mat-toolbar {
+	background-color: white;
 }

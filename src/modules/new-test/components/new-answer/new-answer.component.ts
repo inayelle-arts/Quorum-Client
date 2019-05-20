@@ -18,7 +18,7 @@ export class NewAnswerComponent
 	public readonly index: number;
 
 	@Input()
-	public isRemoveable: boolean;
+	public isRemovable: boolean;
 
 	@Output()
 	public onRemoveClick: EventEmitter<number>;

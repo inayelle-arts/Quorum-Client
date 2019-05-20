@@ -1,6 +1,6 @@
 export interface SignUpViewModel
 {
-	userType: string;
+	role: string;
 	email: string;
 	password: string;
 }

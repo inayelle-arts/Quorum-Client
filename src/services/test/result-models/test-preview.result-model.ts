@@ -7,4 +7,6 @@ export interface TestPreviewResultModel
 
 	questionsCount: number;
 	tags: string[];
+	
+	createdAt : Date;
 }
