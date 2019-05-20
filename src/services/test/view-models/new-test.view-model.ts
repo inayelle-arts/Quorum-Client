@@ -1,4 +1,4 @@
-import { NewQuestionViewModel } from '@services/test/view-models/new-question.view-model';
+import {NewQuestionViewModel} from '@services/test/view-models/new-question.view-model';
 
 export interface NewTestViewModel
 {
@@ -6,4 +6,5 @@ export interface NewTestViewModel
 	description: string;
 	tags: string[];
 	questions: NewQuestionViewModel[];
+	createdAt: Date;
 }

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { PreviewComponent } from './components/preview/preview.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileRouting } from './profile.routing';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
 	declarations: [ProfileComponent, PreviewComponent],
@@ -12,7 +13,8 @@ import { ProfileRouting } from './profile.routing';
 		CommonModule,
 		GuardsModule,
 		MaterialModule,
-		ProfileRouting
+		ProfileRouting,
+		RouterModule
 	]
 })
 export class ProfileModule { }

@@ -19,7 +19,7 @@ const routes: Routes = [
 		loadChildren: () => MyTestsModule
 	},
 	{
-		path: 'profile',
+		path: 'results',
 		loadChildren: () => ProfileModule
 	},
 	{

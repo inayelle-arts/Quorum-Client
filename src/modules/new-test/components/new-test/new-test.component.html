@@ -1,83 +1,84 @@
-<div class="container-center w-50">
-	<h1 class="w-100">Test creation</h1>
+<div class="container-center">
+    <h1 class="w-100 text-center" style="margin-bottom: 50px">Test creation</h1>
 
-	<form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-		<mat-vertical-stepper #stepper>
+        <mat-vertical-stepper #stepper>
 
-			<mat-step label="General information" [completed]='form.name.valid'>
+            <mat-step label="General information" [completed]='form.name.valid'>
 
-				<mat-form-field>
-					<mat-label>
-						Test name
-					</mat-label>
+                <mat-form-field>
+                    <mat-label>
+                        Test name
+                    </mat-label>
 
-					<input matInput type="text" [formControl]="form.name">
+                    <input matInput type="text" [formControl]="form.name">
 
-					<mat-error>
-						Name is requried
-					</mat-error>
+                    <mat-error>
+                        Name is requried
+                    </mat-error>
 
-				</mat-form-field>
+                </mat-form-field>
 
-				<mat-form-field>
-					<mat-label>
-						Description
-					</mat-label>
+                <mat-form-field>
+                    <mat-label>
+                        Description
+                    </mat-label>
 
-					<input matInput type="text" [formControl]="form.description">
+                    <textarea matInput type="text" [formControl]="form.description"
+                              cdkTextareaAutosize="true"></textarea>
 
-				</mat-form-field>
+                </mat-form-field>
 
-				<q-tag-list [tags]="form.tags" (onAdd)="addTag($event)" (onRemove)="removeTag($event)">
-				</q-tag-list>
+                <q-tag-list [tags]="form.tags" (onAdd)="addTag($event)" (onRemove)="removeTag($event)">
+                </q-tag-list>
 
-			</mat-step>
+            </mat-step>
 
-			<mat-step #questionsStep>
-				<q-step-label *matStepLabel label="Questions">
-					<div class="step-actions" *ngIf="stepper.selected == questionsStep">
-						<button mat-icon-button type="button" matTooltip="Add question" color="primary"
-							(click)="form.addQuestion()">
-							<mat-icon>add</mat-icon>
-						</button>
-					</div>
-				</q-step-label>
+            <mat-step #questionsStep>
+                <q-step-label *matStepLabel label="Questions">
+                    <div class="step-actions" *ngIf="stepper.selected == questionsStep">
+                        <button mat-icon-button type="button" matTooltip="Add question" color="primary"
+                                (click)="addQuestion()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </q-step-label>
 
-				<mat-vertical-stepper>
-					<mat-step *ngFor="let question of form.questions.controls;let i = index">
-						<q-step-label *matStepLabel label="Question {{i + 1}}">
+                <mat-vertical-stepper #questionsStepper>
+                    <mat-step *ngFor="let question of form.questions.controls;let i = index">
+                        <q-step-label *matStepLabel label="Question {{i + 1}}">
 
-							<div class="step-actions">
-								<button mat-icon-button type="button" matTooltip="Add answer" color="primary"
-									(click)="addAnswer(question)">
-									<mat-icon>add</mat-icon>
-								</button>
-								<button mat-icon-button type="button" matTooltip="Remove question" color="warn"
-									(click)="form.removeQuestion(i)" *ngIf="isQuestionRemoveable">
-									<mat-icon>remove</mat-icon>
-								</button>
-							</div>
+                            <div class="step-actions">
+                                <button mat-icon-button type="button" matTooltip="Add answer" color="primary"
+                                        (click)="addAnswer(question)">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                                <button mat-icon-button type="button" matTooltip="Remove question" color="warn"
+                                        (click)="form.removeQuestion(i)" *ngIf="isQuestionRemovable">
+                                    <mat-icon>remove</mat-icon>
+                                </button>
+                            </div>
 
-						</q-step-label>
+                        </q-step-label>
 
-						<q-new-question [form]="question"></q-new-question>
-					</mat-step>
-				</mat-vertical-stepper>
+                        <q-new-question [form]="question"></q-new-question>
+                    </mat-step>
+                </mat-vertical-stepper>
 
-			</mat-step>
+            </mat-step>
 
-			<mat-step label="Summarize and submit">
-				<div class="container-center">
-					<button mat-raised-button [disabled]="form.invalid || isSent">
-						Submit this peace of test!
-					</button>
-				</div>
-			</mat-step>
+            <mat-step label="Summarize and submit">
+                <div class="container-center">
+                    <button mat-raised-button [disabled]="form.invalid || isSent">
+                        Submit this peace of test!
+                    </button>
+                </div>
+            </mat-step>
 
-		</mat-vertical-stepper>
+        </mat-vertical-stepper>
 
 
-	</form>
+    </form>
 
 </div>

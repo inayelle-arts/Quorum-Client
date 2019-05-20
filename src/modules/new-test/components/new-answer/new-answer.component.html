@@ -1,20 +1,20 @@
 <mat-form-field class="answer-field">
-	<mat-label>
-		Answer {{index + 1}}
-	</mat-label>
+    <mat-label>
+        Answer {{index + 1}}
+    </mat-label>
 
-	<div class="answer-actions">
-		<input matInput type="text" [formControl]="form.content">
-		<button type="button" matTooltip="Remove answer" mat-icon-button color="warn" (click)="remove()"
-			*ngIf="isRemoveable">
-			<mat-icon>remove</mat-icon>
-		</button>
-		<mat-checkbox matTooltip="Mark as correct" [formControl]="form.isCorrect" color="primary">
-		</mat-checkbox>
-	</div>
+    <div class="answer-actions">
+        <textarea matInput type="text" [formControl]="form.content" cdkTextareaAutosize="true"></textarea>
+        <button type="button" matTooltip="Remove answer" mat-icon-button color="warn" (click)="remove()"
+                *ngIf="isRemovable">
+            <mat-icon>remove</mat-icon>
+        </button>
+        <mat-checkbox matTooltip="Mark as correct" [formControl]="form.isCorrect" color="primary">
+        </mat-checkbox>
+    </div>
 
-	<mat-error>
-		Answer cannot be empty
-	</mat-error>
+    <mat-error>
+        Answer cannot be empty
+    </mat-error>
 
 </mat-form-field>

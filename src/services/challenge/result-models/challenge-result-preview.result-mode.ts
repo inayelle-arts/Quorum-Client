@@ -4,4 +4,6 @@ export interface ChallengeResultPreviewResultModel
 	name: string;
 	challengedAt: string;
 	userEmail: string;
+	userScore: number;
+	maximumScore: number;
 }

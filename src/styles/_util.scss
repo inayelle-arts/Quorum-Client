@@ -4,8 +4,12 @@ $breakspoints: 10 15 25 33 50 66 75 85 90 100;
 	.w-#{$breakspoint} {
 		width: #{$breakspoint}% !important;
 	}
-
+	
 	.h-#{$breakspoint} {
 		height: #{$breakspoint}% !important;
 	}
+}
+
+.text-center {
+	text-align: center !important;
 }

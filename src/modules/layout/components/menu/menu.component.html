@@ -4,17 +4,17 @@
 	</button>
 
 	<mat-menu #menu>
-		<button mat-menu-item (click)="onProfileClick()" *ngIf="loggedIn">
-			<mat-icon class="nav-link-icon">account_box</mat-icon>
-			<span class="nav-link-text">Profile</span>
+		<button mat-menu-item routerLink="/new" *ngIf="loggedIn && isTutor">
+			<mat-icon class="nav-link-icon">content_paste</mat-icon>
+			<span class="nav-link-text">Create</span>
 		</button>
 		<button mat-menu-item (click)="onMyTestsClick()" *ngIf="loggedIn && isTutor">
 			<mat-icon class="nav-link-icon">assignment</mat-icon>
 			<span class="nav-link-text">My tests</span>
 		</button>
-		<button mat-menu-item routerLink="/new" *ngIf="loggedIn && isTutor">
-			<mat-icon class="nav-link-icon">content_paste</mat-icon>
-			<span class="nav-link-text">Create</span>
+		<button mat-menu-item (click)="onProfileClick()" *ngIf="loggedIn">
+			<mat-icon class="nav-link-icon">account_box</mat-icon>
+			<span class="nav-link-text">Results</span>
 		</button>
 		<button mat-menu-item (click)="onSignInClick()" *ngIf="!loggedIn">
 			<mat-icon class="nav-link-icon">arrow_forward</mat-icon>

@@ -1,6 +1,23 @@
-.mat-card {
-	margin-bottom: 40px;
-	width: 100%;
+@import "~src/styles/_theme";
 
+.mat-card {
+	width: 100%;
+	
 	border-bottom: 1px solid gray;
+	
+	transition: background-color 0.7s ease;
+	
+	&:hover {
+		background-color: darken(white, 5%);
+	}
+}
+
+.bad-result {
+	color: $warn-color;
+	font-weight: bold;
+}
+
+.excellent-result {
+	color: forestgreen;
+	font-weight: bold;
 }
