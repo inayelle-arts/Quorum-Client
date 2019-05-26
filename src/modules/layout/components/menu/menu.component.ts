@@ -44,7 +44,7 @@ export class MenuComponent
 
 	public onSignInClick(): void
 	{
-		this._bottomSheet.open(SignInComponent, {});
+		this._bottomSheet.open(SignInComponent);
 	}
 
 	public onSignUpClick(): void
