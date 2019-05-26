@@ -9,15 +9,16 @@ import { SignResultModel } from './result-models/sign.result-model';
 @Injectable()
 export class SignService extends HttpServiceBase
 {
-	private readonly _url: string = '/api/sign';
+	private readonly _signUpUrl: string = '/api/sign/up';
+	private readonly _signInUrl: string = '/identity/sign/in';
 
 	public signIn(userData: SignInViewModel): Observable<SignResultModel>
 	{
-		return this.http.post<SignResultModel>(this.combineUrl(this._url, 'in'), userData);
+		return this.http.post<SignResultModel>(this._signInUrl, userData);
 	}
 
-	public signUp(userData: SignUpViewModel): Observable<SignResultModel>
+	public signUp(userData: SignUpViewModel): Observable<void>
 	{
-		return this.http.post<SignResultModel>(this.combineUrl(this._url, 'up'), userData);
+		return this.http.post<void>(this._signUpUrl, userData);
 	}
 }

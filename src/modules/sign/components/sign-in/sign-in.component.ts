@@ -1,12 +1,12 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {NotificationService} from '@services/notification/notification.service';
 import {SignInForm} from '@modules/sign/forms/sign-in.form';
 import {SignService} from '@services/sign/sign.service';
 import {UserService} from '@services/user/user.service';
-import {Observable, throwError} from 'rxjs';
+import {throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import 'rxjs/operator/catch';
-import {ValidationErrors} from "@angular/forms";
+import {MatBottomSheet} from "@angular/material";
 
 @Component({
 	selector: 'q-sign-in',
@@ -18,6 +18,7 @@ export class SignInComponent
 	private readonly _signService: SignService;
 	private readonly _userService: UserService;
 	private readonly _notifyService: NotificationService;
+	private readonly _bottomSheet: MatBottomSheet;
 	private readonly _router: Router;
 	private _isSent: boolean;
 	
@@ -27,11 +28,13 @@ export class SignInComponent
 		signService: SignService,
 		userService: UserService,
 		notifyService: NotificationService,
+		bottomSheet: MatBottomSheet,
 		router: Router)
 	{
 		this._signService = signService;
 		this._userService = userService;
 		this._notifyService = notifyService;
+		this._bottomSheet = bottomSheet;
 		this._router = router;
 		this._isSent = false;
 		this.form = new SignInForm();
@@ -64,6 +67,8 @@ export class SignInComponent
 			{
 				this._userService.store(result.token);
 				this._notifyService.notify(`Success! [${this._userService.current.email}]`);
+				
+				this._bottomSheet._openedBottomSheetRef.dismiss();
 				
 				this._router.navigate(['']);
 			});
