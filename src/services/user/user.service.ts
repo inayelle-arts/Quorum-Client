@@ -17,6 +17,8 @@ export class UserService
 		this._notifyService = notifyService;
 
 		this._restoreUser();
+		
+		this.loggedIn;
 	}
 
 	public store(token: string | JwtToken): void
