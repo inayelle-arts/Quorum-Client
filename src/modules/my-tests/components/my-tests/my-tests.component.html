@@ -1,5 +1,5 @@
 <div class="container-center">
-	<h1 class="w-100 text-center" style="margin-bottom: 50px">My tests</h1>
+	<h1 class="w-100 text-center" style="margin-bottom: 120px">My tests</h1>
 	<mat-list *ngIf="loaded">
 		<mat-list-item *ngFor="let preview of testPreviews">
 			<q-test-preview [preview]="preview" (onDelete)="deleteTest($event)" class="w-100"></q-test-preview>

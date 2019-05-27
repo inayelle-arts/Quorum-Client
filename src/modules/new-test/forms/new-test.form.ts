@@ -16,10 +16,11 @@ export class NewTestForm extends FormBase<NewTestViewModel>
 			name: new FormControl('', Validators.required),
 			description: new FormControl(''),
 			tags: new FormArray([]),
-			questions: new FormArray([])
+			questions: new FormArray([]),
+			shuffleQuestions: new FormControl(false)
 		});
 	}
-
+	
 	public get name(): FormControl
 	{
 		return this.getControl('name');
@@ -40,6 +41,11 @@ export class NewTestForm extends FormBase<NewTestViewModel>
 		return this.getArray('questions');
 	}
 
+	public get shuffleQuestions() : FormControl
+	{
+		return this.getControl('shuffleQuestions');
+	}
+	
 	public addTag(tag: string): void
 	{
 		if (!this.tags.controls.some(c => c.value == tag))

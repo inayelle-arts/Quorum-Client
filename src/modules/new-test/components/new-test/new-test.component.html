@@ -69,7 +69,14 @@
             </mat-step>
 
             <mat-step label="Summarize and submit">
-                <div class="container-center">
+                <div class="container-center w-100">
+                    <mat-form-field class="w-100">
+                        <input matInput style="display: none">
+                        <mat-checkbox [formControl]="form.shuffleQuestions" class="w-100">
+                            Do we need to shuffle questions on every challenge?
+                        </mat-checkbox>
+                    </mat-form-field>
+                    
                     <button mat-raised-button [disabled]="form.invalid || isSent">
                         Submit this peace of test!
                     </button>
@@ -77,7 +84,6 @@
             </mat-step>
 
         </mat-vertical-stepper>
-
 
     </form>
 

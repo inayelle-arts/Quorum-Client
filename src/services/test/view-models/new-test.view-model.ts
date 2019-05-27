@@ -7,4 +7,5 @@ export interface NewTestViewModel
 	tags: string[];
 	questions: NewQuestionViewModel[];
 	createdAt: Date;
+	shuffleQuestions?: boolean;
 }

@@ -13,6 +13,17 @@
         </mat-card-subtitle>
     </mat-card-title-group>
 
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Options
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-checkbox [checked]="preview.shuffleQuestions" (change)="onShuffleClick($event)">
+            Shuffle questions on every challenge
+        </mat-checkbox>
+    </mat-expansion-panel>
+    
     <mat-card-actions>
         <button mat-button (click)="onPassClick()">TEST YOUR MIGHT</button>
         <button mat-button (click)="onShareClick()">SHARE</button>
