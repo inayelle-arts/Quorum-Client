@@ -8,5 +8,7 @@ export interface TestPreviewResultModel
 	questionsCount: number;
 	tags: string[];
 	
+	shuffleQuestions: boolean;
+	
 	createdAt : Date;
 }
