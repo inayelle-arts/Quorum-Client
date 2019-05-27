@@ -5,7 +5,7 @@ import
 	ErrorStateMatcher,
 	ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
-import { GuardsModule } from '@guards/guards.module';
+import {MaterialModule} from "@modules/material/material.module";
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@modules/layout/layout.module';
@@ -28,6 +28,7 @@ import { InterceptorsModule } from 'src/interceptors/interceptors.module';
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		MaterialModule,
 		InterceptorsModule,
 		LayoutModule,
 		RootRouting
