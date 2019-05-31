@@ -6,6 +6,7 @@ import
 	ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import {MaterialModule} from "@modules/material/material.module";
+import {CookieService} from "ngx-cookie-service";
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@modules/layout/layout.module';
@@ -34,6 +35,7 @@ import { InterceptorsModule } from 'src/interceptors/interceptors.module';
 		RootRouting
 	],
 	providers: [
+		CookieService,
 		{
 			provide: ErrorStateMatcher,
 			useClass: ShowOnDirtyErrorStateMatcher

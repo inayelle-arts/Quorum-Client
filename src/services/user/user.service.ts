@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import { NotificationService } from '@services/notification/notification.service';
-import { JwtToken } from './jwt/jwt-token';
-import { JwtPayload } from './jwt/jwt-payload';
+import {Injectable} from '@angular/core';
+import {NotificationService} from '@services/notification/notification.service';
+import * as moment from "moment";
+import {CookieService} from "ngx-cookie-service";
+import {JwtToken} from './jwt/jwt-token';
+import {JwtPayload} from './jwt/jwt-payload';
 
 @Injectable()
 export class UserService
@@ -9,15 +11,17 @@ export class UserService
 	private static readonly StorageKey: string = "token";
 
 	private readonly _notifyService: NotificationService;
+	private readonly _cookieService: CookieService;
 
 	private _token: JwtToken = null;
 
-	public constructor(notifyService: NotificationService)
+	public constructor(notifyService: NotificationService, cookieService: CookieService)
 	{
 		this._notifyService = notifyService;
+		this._cookieService = cookieService;
 
 		this._restoreUser();
-		
+
 		this.loggedIn;
 	}
 
@@ -31,13 +35,19 @@ export class UserService
 		{
 			this._token = new JwtToken(token);
 		}
+		
+		console.log(moment().add(30, 'minutes').format('dd-MM-YYYY HH:mm:ss'));
 
-		localStorage.setItem(UserService.StorageKey, this._token.raw);
+		this._cookieService.set(UserService.StorageKey,
+		                        this._token.raw,
+		                        moment().add(30, 'minutes').toDate());
+		// localStorage.setItem(UserService.StorageKey, this._token.raw);
 	}
 
 	public unstore(): void
 	{
-		localStorage.removeItem(UserService.StorageKey);
+		this._cookieService.delete(UserService.StorageKey);
+		// localStorage.removeItem(UserService.StorageKey);
 		this._token = null;
 	}
 
@@ -69,7 +79,8 @@ export class UserService
 
 	private _restoreUser(): void
 	{
-		const rawToken = localStorage.getItem(UserService.StorageKey);
+		// const rawToken = localStorage.getItem(UserService.StorageKey);
+		const rawToken = this._cookieService.get(UserService.StorageKey);
 
 		if (rawToken)
 		{
